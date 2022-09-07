@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Driver : MonoBehaviour
 {
+    //Control Keys
+    public KeyCode forward = KeyCode.W;
     //Car stats
     [SerializeField] float steerSpeed = 0.5f;
     [SerializeField] float moveSpeed = 1500;
@@ -18,25 +20,25 @@ public class Driver : MonoBehaviour
 
     private bool adelante;
     private bool atras;
-    private bool derecha;
-    private bool izquierda;
+    //private bool derecha;
+    //private bool izquierda;
     private bool rotDerecha;
     private bool rotIZquierda;
+
     //Type of trash that has to be picked-up in order to gain or lose fuel. 
     [SerializeField] bool OrganicTrashEngine;
     [SerializeField] bool NonOrganicTrashEngine;
     [SerializeField] bool ElectronicTrashEngine;
+
+    public AudioSource carAudioSource;
+    private bool engineSFX = false;
 
     public Text scoreTxt;
     public int score;
 
     public Slider fuelSlider;
     
-    void Start()
-    {
-        this.fuelSlider.maxValue = maxFuel;
-        score=0;
-    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -108,14 +110,77 @@ public class Driver : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void HaciaAdelante()
     {
+        adelante = true;
+    }
+    public void HaciaAtras()
+    {
+        atras = true;
+    }
+
+    public void HaciaIzquierda()
+    {
+        //izquierda = true;
+    }
+    public void HaciaDerecha()
+    {
+        //derecha = true;
+    }
+
+    public void RotacionDerecha()
+    {
+        rotDerecha = true;
+    }
+
+    public void RotacionIzquierda()
+    {
+        rotIZquierda = true;
+    }
+
+    public void sinFuncion()
+    {
+        adelante = false;
+        atras = false;
+        //derecha = false;
+        //izquierda = false;
+        rotDerecha = false;
+        rotIZquierda = false;
+        //SFX control
+        engineSFX = false;
+        this.carAudioSource.Stop();
+    }
+
+    public void gameOver() {
+        gameOverMenu.SetActive(true);
+        Time.timeScale = 0f;  
+    }
+
+    /*public void computerController()
+    {
+        //Time.deltaTime adds frame rate independance 
+        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;
+        float moveAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+
+        transform.Rotate(0, 0, -steerAmount);
+        transform.Translate(0, moveAmount, 0);
+    }*/
+
+    // Update is called once per frame
+    private void Update()
+    {
+        //this.computerController();
        
         if (adelante == true)
         {
             float moveAmount = (1 * moveSpeed * Time.deltaTime);
             transform.Translate(0, moveAmount, 0);
+            //Engine SFX
+            if(!engineSFX)
+            {
+                this.carAudioSource.Play();
+                engineSFX = true;
+            }
         }
 
         if (atras == true)
@@ -143,46 +208,10 @@ public class Driver : MonoBehaviour
         scoreTxt.text = score.ToString();
     }
 
-    public void HaciaAdelante()
+    private void Start()
     {
-        adelante = true;
-    }
-    public void HaciaAtras()
-    {
-        atras = true;
-    }
-
-    public void HaciaIzquierda()
-    {
-        izquierda = true;
-    }
-    public void HaciaDerecha()
-    {
-        derecha = true;
-    }
-
-    public void RotacionDerecha()
-    {
-        rotDerecha = true;
-    }
-
-    public void RotacionIzquierda()
-    {
-        rotIZquierda = true;
-    }
-
-    public void sinFuncion()
-    {
-        adelante = false;
-        atras = false;
-        derecha = false;
-        izquierda = false;
-        rotDerecha = false;
-        rotIZquierda = false;
-    }
-
-    public void gameOver() {
-        gameOverMenu.SetActive(true);
-        Time.timeScale = 0f;  
+        this.carAudioSource = GetComponent<AudioSource>();
+        this.fuelSlider.maxValue = maxFuel;
+        score=0;
     }
 }
