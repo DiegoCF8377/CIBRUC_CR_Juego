@@ -9,6 +9,8 @@ public class CountDownLight : MonoBehaviour
     private int lightsCounter = 0;
 
     public GameObject [] lights = new GameObject[4]; 
+    public Cinemachine.CinemachineVirtualCamera [] cameras = new Cinemachine.CinemachineVirtualCamera [4];
+    public Cinemachine.CinemachineVirtualCamera mainCamera;
 
     public void countDown()
     {
@@ -18,11 +20,13 @@ public class CountDownLight : MonoBehaviour
         }
         else if(lightsCounter == lights.Length)
         {
+            this.mainCamera.Priority = 10;
             this.gameObject.SetActive(false);
         }
         else if(countDownTimer < 0.0f)
         {
             lights[lightsCounter].SetActive(true);
+            cameras[lightsCounter].Priority = 10;
             lightsCounter++;
             countDownTimer = countDownTimerLimit;
         } 
