@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4393167757136646068}
   - component: {fileID: 956102469363580421}
   - component: {fileID: 5105813609728344460}
+  - component: {fileID: 3334885994781472933}
   m_Layer: 0
   m_Name: pitsGarageCorner
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3334885994781472933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227403828113295931}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.5, y: 7, z: 10}
+  m_Center: {x: 5.25, y: 3.5, z: 5}

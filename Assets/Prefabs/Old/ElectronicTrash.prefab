@@ -179,6 +179,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: speakerSmall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5bafb30a2874a774389c661223b6fa67,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bafb30a2874a774389c661223b6fa67, type: 3}
 --- !u!1 &542153737256156032 stripped
@@ -275,6 +280,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: radio
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 429b42788cc77ba45b8a0481938dc342,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 429b42788cc77ba45b8a0481938dc342, type: 3}
 --- !u!1 &5475459966370160864 stripped
@@ -370,6 +380,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: laptop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dfb2ae462467ef14fb27f3c63fef90af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfb2ae462467ef14fb27f3c63fef90af, type: 3}

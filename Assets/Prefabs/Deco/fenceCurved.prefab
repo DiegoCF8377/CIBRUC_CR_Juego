@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7086559227446287627}
   - component: {fileID: 4367740071533026754}
   - component: {fileID: 814695299634976688}
+  - component: {fileID: 5874930286849527332}
   m_Layer: 0
   m_Name: fenceCurved
   m_TagString: Untagged
@@ -80,3 +81,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5874930286849527332
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550200740758903247}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 8.200001, z: 1}
+  m_Center: {x: 5, y: 4.1000004, z: -0.42}

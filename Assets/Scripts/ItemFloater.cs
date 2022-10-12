@@ -5,8 +5,8 @@ using UnityEngine;
 public class ItemFloater : MonoBehaviour
 {
     // Inputs de usuario
-    public float degreesPerSecond = 15.0f;
-    public float amplitude = 25.0f;
+    public float degreesPerSecond = 5.0f;
+    public float amplitude = 1.0f;
     public float frequency = 1.0f;
  
     // Variables que almacenan posición
@@ -17,19 +17,19 @@ public class ItemFloater : MonoBehaviour
     void Start()
     {
         // Guarda la posición inicial y rotación del objeto
-        posOffset = transform.position;    
+        //posOffset = transform.position;    
     }
 
     // Update is called once per frame
     void Update()
     {
         // Spin object around Y-Axis
-        transform.Rotate(new Vector3(0f, 0f, Time.deltaTime * degreesPerSecond), Space.World);
+        transform.Rotate(new Vector3(0f, Time.deltaTime * degreesPerSecond, 0f), Space.World);
  
         // Float up/down with a Sin()
-        tempPos = posOffset;
-        tempPos.z += Mathf.Sin (Time.fixedTime * Mathf.PI * frequency) * amplitude;
+        //tempPos = posOffset;
+        //tempPos.y += Mathf.Sin (Time.fixedTime * Mathf.PI * frequency) * amplitude;
  
-        transform.position = tempPos;
+        //transform.position = tempPos;
     }
 }
