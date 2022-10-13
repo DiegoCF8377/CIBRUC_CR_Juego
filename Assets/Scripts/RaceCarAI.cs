@@ -56,7 +56,7 @@ public class RaceCarAI : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        carModel[Random.Range(0,5)].SetActive(true);
+        carModel[Random.Range(0,6)].SetActive(true);
         raceCar = GetComponent<Rigidbody>();
         startPosition = transform.position;
     }
