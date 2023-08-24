@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10635,7 +10635,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004231563}
   m_LocalRotation: {x: 0.08715578, y: -0, z: -0, w: 0.9961947}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8770633871890206005}
@@ -22397,7 +22397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7422848283705194875}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.138, z: -0.049}
+  m_LocalPosition: {x: 0, y: 0.138, z: -2}
   m_LocalScale: {x: 0.10033398, y: 0.090172045, z: 0.0946}
   m_Children: []
   m_Father: {fileID: 8770633871890206005}
@@ -22452,7 +22452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793508799823206023}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.221, z: -0.413}
+  m_LocalPosition: {x: 0, y: 0.221, z: -2}
   m_LocalScale: {x: 0.06001113, y: 0.07123286, z: 0.09246353}
   m_Children: []
   m_Father: {fileID: 8770633871890206005}
@@ -28361,7 +28361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6277836736183767768}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 136838040905460369}
@@ -28694,7 +28694,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5863496135170392119}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.182, z: -0.139}
+  m_LocalPosition: {x: 0, y: 0.182, z: -2}
   m_LocalScale: {x: 0.09322381, y: 0.09444589, z: 0.1048081}
   m_Children: []
   m_Father: {fileID: 8770633871890206005}
@@ -28708,7 +28708,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7224395723538656151}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.117, z: -0.105}
+  m_LocalPosition: {x: 0, y: 0.117, z: -2}
   m_LocalScale: {x: 0.09658768, y: 0.089160204, z: 0.13475001}
   m_Children: []
   m_Father: {fileID: 8770633871890206005}
@@ -28763,7 +28763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7404093110021620811}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 0.90181637}
   m_Children: []
   m_Father: {fileID: 8770633871890206005}
@@ -28834,7 +28834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8770633871890206001}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 133.23596, y: 0.11, z: 62.46}
+  m_LocalPosition: {x: 133.23596, y: 0.11, z: 60.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8770633872402520061}
@@ -28861,7 +28861,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.62, z: 2}
-  m_Center: {x: 0, y: 0.3, z: 0}
+  m_Center: {x: 0, y: 0.3, z: -2}
 --- !u!212 &8770633872337635608
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28937,7 +28937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8770633872337635610}
   m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0, y: -0.003, z: 0}
+  m_LocalPosition: {x: 0, y: -0.003, z: -2}
   m_LocalScale: {x: 1, y: 1.8, z: 1}
   m_Children: []
   m_Father: {fileID: 8770633871890206005}
@@ -29019,7 +29019,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8770633872402520060}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 0.85}
   m_Children: []
   m_Father: {fileID: 8770633871890206005}
