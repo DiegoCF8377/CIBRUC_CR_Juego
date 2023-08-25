@@ -186,7 +186,7 @@ public class DriverController : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         if (GameManager.gameManagerInstance.fuelSlider.value <= 0)
         {
