@@ -6,10 +6,10 @@ public class DriverController : MonoBehaviour
 {
     //Car stats
     public float steerSpeed = 0.5f;
-    public float moveSpeed = 1500;
+    public float moveSpeed = 25;
     public float maxFuel = 100.0f;
     public float fuelLostPerFrame = 0.01f;
-    public float fuelRecoveredOnRightPickUp = 10.0f;
+    public float fuelRecoveredOnRightPickUp = 34.0f;
     public float fuelLostOnWrongPickUp = 10.0f;
 
     //Type of trash that has to be picked-up in order to gain or lose fuel. 
@@ -38,13 +38,13 @@ public class DriverController : MonoBehaviour
             {
                 Debug.Log("Incorrect collision with NonOrganicTrash fuel lost");
                 other.gameObject.SetActive(false);
-                GameManager.gameManagerInstance.fuelSlider.value -= fuelLostOnWrongPickUp;
+                // GameManager.gameManagerInstance.fuelSlider.value -= fuelLostOnWrongPickUp;
             }
             else if(other.CompareTag("ElectronicTrash"))
             {
                 Debug.Log("Incorrect collision with ElectronicTrash fuel lost");
                 other.gameObject.SetActive(false);
-                GameManager.gameManagerInstance.fuelSlider.value -= fuelLostOnWrongPickUp;
+                // GameManager.gameManagerInstance.fuelSlider.value -= fuelLostOnWrongPickUp;
             }
         }
         else if(nonOrganicTrashEngine)
@@ -53,20 +53,20 @@ public class DriverController : MonoBehaviour
             {
                 Debug.Log("Incorrect collision with OrganicTrash fuel lost");
                 other.gameObject.SetActive(false);
-                GameManager.gameManagerInstance.fuelSlider.value -= fuelRecoveredOnRightPickUp;
+                // GameManager.gameManagerInstance.fuelSlider.value -= fuelLostOnWrongPickUp;
             }
             else if(other.CompareTag("NonOrganicTrash"))
             {
                 Debug.Log("Correct collision with NonOrganicTrash fuel recovered");
                 other.gameObject.SetActive(false);
-                GameManager.gameManagerInstance.fuelSlider.value += fuelLostOnWrongPickUp;
+                GameManager.gameManagerInstance.fuelSlider.value += fuelRecoveredOnRightPickUp;
                 score += 10;
             }
             else if(other.CompareTag("ElectronicTrash"))
             {
                 Debug.Log("Incorrect collision with ElectronicTrash fuel lost");
                 other.gameObject.SetActive(false);
-                GameManager.gameManagerInstance.fuelSlider.value -= fuelLostOnWrongPickUp;
+                // GameManager.gameManagerInstance.fuelSlider.value -= fuelLostOnWrongPickUp;
             }
         }
         else if(electronicTrashEngine)
@@ -75,19 +75,19 @@ public class DriverController : MonoBehaviour
             {
                 Debug.Log("Incorrect collision with OrganicTrash fuel lost");
                 other.gameObject.SetActive(false);
-                GameManager.gameManagerInstance.fuelSlider.value -= fuelRecoveredOnRightPickUp;
+                // GameManager.gameManagerInstance.fuelSlider.value -= fuelLostOnWrongPickUp;
             }
             else if(other.CompareTag("NonOrganicTrash"))
             {
                 Debug.Log("Incorrect collision with NonOrganicTrash fuel lost");
                 other.gameObject.SetActive(false);
-                GameManager.gameManagerInstance.fuelSlider.value -= fuelLostOnWrongPickUp;
+                // GameManager.gameManagerInstance.fuelSlider.value -= fuelLostOnWrongPickUp;
             }
             else if(other.CompareTag("ElectronicTrash"))
             {
                 Debug.Log("Correct collision with ElectronicTrash fuel recovered");
                 other.gameObject.SetActive(false);
-                GameManager.gameManagerInstance.fuelSlider.value += fuelLostOnWrongPickUp;
+                GameManager.gameManagerInstance.fuelSlider.value += fuelRecoveredOnRightPickUp;
                 score += 10;
             }
         }
@@ -139,7 +139,7 @@ public class DriverController : MonoBehaviour
             transform.Rotate(0, steerAmount, 0);
             transform.Translate(0, 0, moveAmount);
 
-            GameManager.gameManagerInstance.fuelSlider.value -= fuelLostPerFrame;
+            // GameManager.gameManagerInstance.fuelSlider.value -= fuelLostPerFrame;
 
             if(!engineSFX)
             {
@@ -159,7 +159,7 @@ public class DriverController : MonoBehaviour
         {
             float moveAmount = (1 * moveSpeed * Time.deltaTime);
             transform.Translate(0, moveAmount, 0);
-            GameManager.gameManagerInstance.fuelSlider.value -= fuelLostPerFrame;
+            // GameManager.gameManagerInstance.fuelSlider.value -= fuelLostPerFrame;
             //Engine SFX
             if(!engineSFX)
             {
@@ -188,10 +188,26 @@ public class DriverController : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        /*
         if (GameManager.gameManagerInstance.fuelSlider.value <= 0)
         {
             GameOver();
         }
+        */
+
+        // If the nitro bar is full
+        if (GameManager.gameManagerInstance.fuelSlider.value == 100)
+        {
+            moveSpeed = 50;
+            GameManager.gameManagerInstance.fuelSlider.value = 0;
+        }
+
+        // If the speed is greater than 25
+        if (moveSpeed > 25)
+        {
+            moveSpeed -= 0.2f;
+        }
+
         ComputerController();
         OnScreenController();
         GameManager.gameManagerInstance.scoreTxt.text = score.ToString();
