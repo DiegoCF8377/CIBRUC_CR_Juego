@@ -7,6 +7,8 @@ public class DriverController : MonoBehaviour
     //Car stats
     public float steerSpeed = 0.5f;
     public float moveSpeed = 25;
+    public float driftAngleSpeed = 300f;
+    public float driftSpeed = 10f;
     public float maxFuel = 100.0f;
     public float fuelLostPerFrame = 0.01f;
     public float fuelRecoveredOnRightPickUp = 34.0f;
@@ -20,7 +22,7 @@ public class DriverController : MonoBehaviour
     private bool engineSFX = false;
     private int score;
     //Head Up Display & User Inferface
-    private bool adelante, atras, rotDerecha, rotIZquierda;
+    private bool adelante, atras, rotDerecha, rotIZquierda, derrape;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -112,6 +114,11 @@ public class DriverController : MonoBehaviour
         rotIZquierda = true;
     }
 
+    public void Derrape()
+    {
+        derrape = true;
+    }
+
     public void SinFuncion()
     {
         adelante = false;
@@ -120,6 +127,7 @@ public class DriverController : MonoBehaviour
         rotIZquierda = false;
         //SFX control
         engineSFX = false;
+        derrape = false;
         carAudioSource.Stop();
     }
 
@@ -133,11 +141,22 @@ public class DriverController : MonoBehaviour
         if(Input.GetAxis("Vertical") != 0)
         {
             //Time.deltaTime adds frame rate independance 
-            float steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;
+            float steerAmount;
             float moveAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+            float driftAmount;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                steerAmount = Input.GetAxis("Horizontal") * driftAngleSpeed * Time.deltaTime;
+                driftAmount = Input.GetAxis("Horizontal") * driftSpeed *-1* Time.deltaTime;
+            }
+            else
+            {
+                steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;
+                driftAmount = 0f;
+            }
 
             transform.Rotate(0, steerAmount, 0);
-            transform.Translate(0, 0, moveAmount);
+            transform.Translate(driftAmount, 0, moveAmount);
 
             // GameManager.gameManagerInstance.fuelSlider.value -= fuelLostPerFrame;
 
@@ -158,7 +177,7 @@ public class DriverController : MonoBehaviour
         if (adelante)
         {
             float moveAmount = (1 * moveSpeed * Time.deltaTime);
-            transform.Translate(0, moveAmount, 0);
+            transform.Translate(0, 0, moveAmount);
             // GameManager.gameManagerInstance.fuelSlider.value -= fuelLostPerFrame;
             //Engine SFX
             if(!engineSFX)
@@ -170,18 +189,42 @@ public class DriverController : MonoBehaviour
         else if (atras)
         {
             float moveAmount = (-1 * moveSpeed * Time.deltaTime);
-            transform.Translate(0, moveAmount, 0);
+            transform.Translate(0, 0, moveAmount);
         }   
 
         if (rotDerecha)
         {
-            float steerAmount =(1 * steerSpeed * Time.deltaTime);
-            transform.Rotate(0, 0, -steerAmount);
+            float steerAmount;
+            float driftAmount;
+            if (derrape)
+            {
+                steerAmount = (1 * driftAngleSpeed * Time.deltaTime);
+                driftAmount = (-1 * driftSpeed * Time.deltaTime);
+            }
+            else
+            {
+                steerAmount = (1 * steerSpeed * Time.deltaTime);
+                driftAmount = 0;
+            }
+            transform.Rotate(0, steerAmount, 0);
+            transform.Translate(driftAmount, 0, 0);
         }
         else if (rotIZquierda)
         {
-            float steerAmount =(-1 * steerSpeed * Time.deltaTime);
-            transform.Rotate(0, 0, -steerAmount);
+            float steerAmount;
+            float driftAmount;
+            if (derrape)
+            {
+                steerAmount = (-1 * driftAngleSpeed * Time.deltaTime);
+                driftAmount = (driftSpeed * Time.deltaTime);
+            }
+            else
+            {
+                steerAmount = (-1 * steerSpeed * Time.deltaTime);
+                driftAmount = 0;
+            }
+            transform.Rotate(0, steerAmount, 0);
+            transform.Translate(driftAmount, 0, 0);
         }
     }
 
