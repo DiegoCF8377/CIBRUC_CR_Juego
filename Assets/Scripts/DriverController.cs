@@ -138,7 +138,7 @@ public class DriverController : MonoBehaviour
 
     public void ComputerController()
     {
-        if(Input.GetAxis("Vertical") != 0)
+        if (Input.GetAxis("Vertical") != 0)
         {
             //Time.deltaTime adds frame rate independance 
             float steerAmount;
@@ -250,17 +250,49 @@ public class DriverController : MonoBehaviour
         {
             moveSpeed -= 0.2f;
         }
+        // Activa el tiempo de espera para volver a cambiar la velocidad
+
+        StartCoroutine(TiempoEspera());
 
         ComputerController();
         OnScreenController();
+
         GameManager.gameManagerInstance.scoreTxt.text = score.ToString();
     }
 
+
+
     private void Start()
     {
+        // Hace que el auto no se pueda mover al poner la velocidad en 0
+        VelocidadCero();
+
         raceCar = GetComponent<Rigidbody>();
         carAudioSource = GetComponent<AudioSource>();
         GameManager.gameManagerInstance.fuelSlider.maxValue = maxFuel;
         score=0;
+
+        
+
+    }
+
+    //Prueba para que el jugador no se pueda mover antes del tiempo requerido, pone las velocidades en el default
+
+    IEnumerator TiempoEspera()
+    {
+        yield return new WaitForSeconds(5);
+
+        moveSpeed = 25;
+        steerSpeed = 125f;
+        driftAngleSpeed = 300f;
+
+    }
+
+    //Pone todas las velocidades en 0 para que el jugador no se pueda mover
+    private void VelocidadCero()
+    {
+        moveSpeed = 0;
+        steerSpeed = 0f;
+        driftAngleSpeed = 0f;
     }
 }
