@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pista_Gran_Premio.unity
     guid: cbf54411fbb81a543839d498185e761c
+  - enabled: 1
+    path: Assets/Scenes/PantallaDeCarga.unity
+    guid: 7abfd396bfa9304428c63af7159e4064
   m_configObjects: {}
