@@ -8,7 +8,7 @@ public class Mainmenu : MonoBehaviour
 {
     public void Nivel1()
     {
-        CargaNivel.NivelCarga("Pista_Gran_Premio");
+        ChangeLevel.NivelCarga("Pista_Gran_Premio");
 
     }
     public void Nivel2()

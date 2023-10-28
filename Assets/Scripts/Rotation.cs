@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public class rotacion : MonoBehaviour
+public class Rotation : MonoBehaviour
 {
     public Vector3 rotate;
     private Rigidbody rigidbody;
@@ -12,7 +12,7 @@ public class rotacion : MonoBehaviour
     public float velocidad;
 
     private void Awake()
-    {
+    {   
         rigidbody = GetComponent<Rigidbody>();
     }
 

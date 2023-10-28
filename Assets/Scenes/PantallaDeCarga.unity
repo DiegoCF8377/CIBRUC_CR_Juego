@@ -227,7 +227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 199, y: -140}
+  m_AnchoredPosition: {x: 199, y: -182}
   m_SizeDelta: {x: 35, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &96546481
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 96546479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb2a3dbc3dd50d54c97c2f7344ff14dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 25548b73f6179e643947bbdc9904b94d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotate: {x: 0, y: 0, z: 0}
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a5eefd1b208ec6f4c9fd8e62fa3ef6c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52603c4992d193f46b7c30d9370796ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 159338422}
   - component: {fileID: 159338421}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text_Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -736,7 +736,7 @@ RectTransform:
   m_GameObject: {fileID: 1543804661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.802062, y: 4.034585, z: 1.3599999}
+  m_LocalScale: {x: 9.421012, y: 4.965214, z: 1.3599999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1884306576}
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5013d9b78426b4643b150fdedaa979f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d23ab7e21acbd0a4393b4d047d2d15ce, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -932,7 +932,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1662320607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff950d086028f7d4890d2bc4d81210d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cc1cbfcbb3a60d43ac6cc56f65090f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   texto: {fileID: 1202680030}
@@ -949,7 +949,7 @@ GameObject:
   - component: {fileID: 1884306574}
   - component: {fileID: 1884306577}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1025,7 +1025,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1884306573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77063e7bf3881094a9a3639b796da41c, type: 3}
+  m_Script: {fileID: 11500000, guid: b1e579ee37dbf394cbdea26361c0eaf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1884306574}
@@ -1041,7 +1041,7 @@ GameObject:
   - component: {fileID: 2021566686}
   - component: {fileID: 2021566685}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text_Circuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

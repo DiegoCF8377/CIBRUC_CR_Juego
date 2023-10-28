@@ -4,18 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Continuar : MonoBehaviour
+public class Continue : MonoBehaviour
 {
    public Text texto;
 
    private void Start(){
-    string nivelACargar = CargaNivel.siguienteNivel;
-    StartCoroutine(IniciarCarga(nivelACargar));
+    
+    string levelToLoad = ChangeLevel.nextLevel;
+    StartCoroutine(Loading(levelToLoad));
 
    }
-   IEnumerator IniciarCarga(string nivel){
+   IEnumerator Loading(string level){
     yield return new WaitForSeconds(2f);
-    AsyncOperation operacion = SceneManager.LoadSceneAsync(nivel);
+    AsyncOperation operacion = SceneManager.LoadSceneAsync(level);
     operacion.allowSceneActivation = false;
 
     while(!operacion.isDone){
@@ -31,4 +32,3 @@ public class Continuar : MonoBehaviour
     }
    }
 }
-
